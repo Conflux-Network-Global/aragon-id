@@ -32,12 +32,12 @@ module.exports = async (
   const FIFSResolvingRegistrar = artifacts.require('FIFSResolvingRegistrar')
   const ENS = artifacts.require('AbstractENS')
 
-  const publicResolver = await ENS.at(ensAddress).resolver(namehash('resolver.eth'))
+  const publicResolver = await (await ENS.at(ensAddress)).resolver(namehash('resolver.eth'))
   const aragonID = await FIFSResolvingRegistrar.new(ensAddress, publicResolver, node)
   await logDeploy(aragonID, { verbose })
 
   log('assigning ENS name to AragonID')
-  const ens = ENS.at(ensAddress)
+  const ens = await ENS.at(ensAddress)
 
   if (await ens.owner(node) === accounts[0]) {
     log('Transferring name ownership from deployer to AragonID')
