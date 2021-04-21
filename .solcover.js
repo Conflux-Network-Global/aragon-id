@@ -1,6 +1,6 @@
 module.exports = {
     norpc: true,
-    copyPackages: ['@aragon/os'],
+    copyPackages: ['@conflux-/aragon-os'],
     skipFiles: [
         'IFIFSResolvingRegistrar.sol',
         'ens/IPublicResolver.sol',

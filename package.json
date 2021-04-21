@@ -1,16 +1,16 @@
 {
-  "name": "@aragon/id",
+  "name": "@conflux-/aragon-id",
   "version": "2.0.3",
   "description": "",
   "scripts": {
-    "compile": "truffle compile",
+    "compile": "cfxtruffle compile --verbose",
     "coverage": "cross-env SOLIDITY_COVERAGE=true ./test.sh",
     "develop": "truffle develop",
     "lint": "solium --dir contracts",
     "migrate": "truffle migrate",
     "test": "./test.sh",
-    "deploy:devnet": "truffle compile --all; truffle exec --network devnet scripts/deploy-beta-aragonid.js",
-    "prepublishOnly": "truffle compile --all"
+    "deploy:devnet": "cfxtruffle compile --all --verbose; cfxtruffle exec --network cfx-development  scripts/deploy-beta-aragonid.js --verbose",
+    "prepublishOnly": "cfxtruffle compile --all --verbose"
   },
   "author": "Aragon Institution MTU <contact@aragon.one>",
   "contributors": [
@@ -23,7 +23,6 @@
     "contracts/",
     "scripts/"
   ],
-  "license": "GPL-3.0",
   "devDependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -40,12 +39,13 @@
     "ethereumjs-testrpc": "^6.0.1",
     "homedir": "^0.6.0",
     "js-sha3": "^0.7.0",
-    "solium": "^1.1.8",
     "solidity-coverage": "^0.5.8",
+    "solium": "^1.1.8",
     "truffle": "4.1.14",
     "truffle-hdwallet-provider": "0.0.3"
   },
   "dependencies": {
-    "@aragon/os": "^4.0.0"
+    "@conflux-/aragon-os": "^4.4.0",
+    "@aragon/truffle-config-v4": "^1.0.1"
   }
 }
