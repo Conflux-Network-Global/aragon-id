@@ -8,9 +8,9 @@ const globalWeb3 = this.web3 // Not injected unless called directly via truffle
 const defaultOwner = process.env.OWNER
 const defaultENSAddress = process.env.ENS
 
-const tld = namehash("eth")
+const tld = namehash("cfx")
 const label = "0x" + keccak256("aragonid")
-const node = namehash("aragonid.eth")
+const node = namehash("aragonid.cfx")
 
 module.exports = async (
     truffleExecCallback,
@@ -32,7 +32,7 @@ module.exports = async (
     const FIFSResolvingRegistrar = artifacts.require("FIFSResolvingRegistrar")
     const ENS = artifacts.require("AbstractENS")
 
-    const publicResolver = await (await ENS.at(ensAddress)).resolver(namehash("resolver.eth"))
+    const publicResolver = await (await ENS.at(ensAddress)).resolver(namehash("resolver.cfx"))
     const aragonID = await FIFSResolvingRegistrar.new(ensAddress, publicResolver, node)
     await logDeploy(aragonID, { verbose })
 
@@ -48,7 +48,7 @@ module.exports = async (
             await ens.setSubnodeOwner(tld, label, aragonID.address)
         } catch (err) {
             console.error(
-                "Error: could not set the owner of 'aragonid.eth' on the given ENS instance",
+                "Error: could not set the owner of 'aragonid.cfx' on the given ENS instance",
                 `(${ensAddress}). Make sure you have ownership rights over the subdomain.`
             )
             throw err
