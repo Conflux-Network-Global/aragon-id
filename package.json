@@ -45,7 +45,7 @@
     "truffle-hdwallet-provider": "0.0.3"
   },
   "dependencies": {
-    "@conflux-/aragon-os": "^4.4.0",
+    "@conflux-/aragon-os": "^4.4.1",
     "@aragon/truffle-config-v4": "^1.0.1"
   }
 }
