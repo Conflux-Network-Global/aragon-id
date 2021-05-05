@@ -1,6 +1,6 @@
 {
   "name": "@conflux-/aragon-id",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "",
   "scripts": {
     "compile": "cfxtruffle compile --verbose",
