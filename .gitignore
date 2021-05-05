@@ -1,4 +1,5 @@
 artifacts/
+.env
 build/
 flattened_contracts/
 
