@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@aragon/truffle-config-v4": "^1.0.1",
-    "@conflux-/aragon-os": "^4.4.1",
+    "@conflux-/aragon-os": "4.4.2",
     "dotenv": "^8.2.0"
   }
 }
